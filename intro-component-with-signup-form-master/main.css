@@ -1,0 +1,253 @@
+/* ///// General ///// */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("images/bg-intro-desktop.png");
+  background-color: #ff7979;
+  font-family: poppins, sans-serif;
+  margin: 2rem;
+}
+
+main {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 3fr 3fr;
+  grid-template-rows: 100%;
+  grid-template-areas: "title input";
+}
+
+section {
+  grid-area: title;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  grid-area: input;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ///// Left Side ///// */
+
+.title {
+  width: 32rem;
+}
+
+.title h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.title p {
+  color: white;
+  margin-top: 2rem;
+}
+
+/* ///// Right Side ///// */
+
+.topSec {
+  height: 3.5rem;
+  width: 33rem;
+  background-color: hsl(248, 32%, 49%);
+  color: white;
+  border-radius: 6px;
+  font-weight: 200;
+  font-size: 0.9rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.16);
+}
+
+.topSec span {
+  font-weight: 700;
+}
+
+.btmSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: whitesmoke;
+  height: 31rem;
+  width: 33rem;
+  padding: 2.3rem;
+
+  border-radius: 6px;
+  margin-top: 1.5rem;
+
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.16);
+}
+
+.btmSec button {
+  background-color: hsl(154, 59%, 51%);
+  border: none;
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+
+  color: whitesmoke;
+}
+
+.btmSec button:hover {
+  cursor: pointer;
+  background-color: hsl(154, 44%, 62%);
+}
+
+.inputContainer {
+  width: 100%;
+  position: relative;
+}
+
+.btmSec input {
+  width: 100%;
+  height: 3.5rem;
+  border-radius: 4px;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  background-color: whitesmoke;
+
+  padding-left: 2rem;
+}
+
+.btmSec div:not(:first-child) {
+  margin-top: 1.9rem;
+}
+
+.agreement {
+  font-size: 0.75rem;
+  color: rgb(151, 148, 148);
+
+  margin-top: 0.7rem;
+}
+
+.agreement span {
+  color: hsl(0, 100%, 74%);
+}
+
+/* ///// Error ///// */
+
+.inputContainer i {
+  position: absolute;
+  color: hsl(0, 100%, 74%);
+
+  bottom: 1.7rem;
+  right: 1.3rem;
+}
+
+.errorText {
+  position: absolute;
+  font-size: 0.7rem;
+  color: hsl(0, 100%, 74%);
+
+  right: 0;
+  top: 3.7rem;
+}
+
+.emailError::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+.errorBorder {
+  border: 1px solid hsl(0, 100%, 74%) !important;
+}
+
+#errorFirst {
+  display: none;
+}
+#errorIconFirst {
+  display: none;
+}
+#errorLast {
+  display: none;
+}
+#errorIconLast {
+  display: none;
+}
+#errorEmail {
+  display: none;
+}
+#errorIconEmail {
+  display: none;
+}
+#errorPass {
+  display: none;
+}
+#errorIconPass {
+  display: none;
+}
+
+/* ///// Screen Sizing ///// */
+
+@media only screen and (max-width: 1105px) {
+  .title h1 {
+    font-size: 2.5rem;
+  }
+
+  .title p {
+    font-size: 0.8rem;
+  }
+
+  .title {
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 935px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "title" "input";
+  }
+
+  /* Top */
+
+  .title h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .title p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .titleText {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Bottom */
+
+  .topSec {
+    width: 25rem;
+    height: 6rem;
+    margin-top: 4rem;
+  }
+
+  .btmSec {
+    width: 25rem;
+    padding: 1.7rem;
+  }
+
+  .agreement {
+    text-align: center;
+    width: 15rem;
+  }
+}
